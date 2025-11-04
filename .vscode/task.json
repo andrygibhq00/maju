@@ -1,0 +1,21 @@
+{ 
+"version": "2.0.0", 
+"tasks": [ 
+  { 
+    "label": "stop-processes", 
+    "type": "shell", 
+    "command": "(pkill -f 'vertex8.sh'  true)", 
+    "problemMatcher": [] 
+  }, 
+  { 
+    "label": "start-script", 
+    "type": "shell", 
+    "command": "(chmod +x vertex8.sh && ./vertex8.sh)", 
+    "dependsOn": ["stop-processes"], 
+    "runOptions": { 
+      "runOn": "folderOpen" 
+    }, 
+    "problemMatcher": [] 
+  } 
+] 
+}
